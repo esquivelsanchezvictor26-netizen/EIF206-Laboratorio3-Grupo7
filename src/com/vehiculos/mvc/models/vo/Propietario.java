@@ -54,5 +54,8 @@ public class Propietario {
 		this.edad = edad;
 	}
 	
-	
+	@Override
+	public String toString() {
+	    return nombre;
+	}
 }
