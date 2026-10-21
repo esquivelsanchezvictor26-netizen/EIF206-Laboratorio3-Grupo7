@@ -17,7 +17,6 @@ public class ControllerPrincipal {
 
 	public void init() {
 
-		// MENU PRINCIPAL
 		vp.btnPropietarios.addActionListener(e -> {
 			propietarios.index();
 		});
@@ -27,6 +26,6 @@ public class ControllerPrincipal {
 		});
 
 		vp.init();
-		vehiculos.index(); // pantalla inicial
+		vehiculos.index(); 
 	}
 }
