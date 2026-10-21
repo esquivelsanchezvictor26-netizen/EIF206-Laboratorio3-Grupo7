@@ -3,6 +3,7 @@ package com.vehiculos.mvc.views.vehiculos;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class PanelVehiculosDinamico extends JPanel {
 
