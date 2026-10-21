@@ -10,9 +10,9 @@ import javax.swing.JButton;
 
 public class PanelForm extends JPanel {
 
-	private static final long serialVersionUID = 1L;
-	private JComboBox comboBox;
-	private JTextField textFieldPlaca;
+	public static final long serialVersionUID = 1L;
+	public JComboBox comboBox;
+	public JTextField textFieldPlaca;
 
 	/**
 	 * Create the panel.
