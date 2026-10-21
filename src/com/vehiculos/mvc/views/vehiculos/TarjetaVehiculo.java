@@ -11,11 +11,11 @@ import java.awt.Dimension;
 public class TarjetaVehiculo extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JLabel lblVehiculo;
-	private JLabel lblPropietario;
-	private JLabel lblPlaca;
-	private JButton btnEliminar;
-	private JButton btnEditar;
+	public JLabel lblVehiculo;
+	public JLabel lblPropietario;
+	public JLabel lblPlaca;
+	public JButton btnEliminar;
+	public JButton btnEditar;
 
 	/**
 	 * Create the panel.
@@ -33,11 +33,11 @@ public class TarjetaVehiculo extends JPanel {
 		panel.add(lblNewLabel);
 		
 		lblVehiculo = new JLabel("New label");
-		lblVehiculo.setBounds(95, 25, 46, 14);
+		lblVehiculo.setBounds(95, 25, 90, 14);
 		panel.add(lblVehiculo);
 		
 		lblPlaca = new JLabel("Placa");
-		lblPlaca.setBounds(95, 50, 65, 14);
+		lblPlaca.setBounds(95, 50, 90, 14);
 		panel.add(lblPlaca);
 		
 		JLabel lblNewLabel_1 = new JLabel("Placa");
@@ -49,7 +49,7 @@ public class TarjetaVehiculo extends JPanel {
 		panel.add(lblNewLabel_2);
 		
 		lblPropietario = new JLabel("New label");
-		lblPropietario.setBounds(95, 77, 46, 14);
+		lblPropietario.setBounds(95, 77, 90, 14);
 		panel.add(lblPropietario);
 		
 		btnEliminar = new JButton("Eliminar");
