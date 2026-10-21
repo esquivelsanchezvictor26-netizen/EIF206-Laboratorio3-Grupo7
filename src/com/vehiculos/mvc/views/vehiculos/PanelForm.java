@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class PanelForm extends JPanel {
 
@@ -43,6 +44,10 @@ public class PanelForm extends JPanel {
 		textFieldPlaca.setBounds(10, 120, 86, 20);
 		panel.add(textFieldPlaca);
 		textFieldPlaca.setColumns(10);
+		
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.setBounds(7, 163, 89, 23);
+		panel.add(btnGuardar);
 
 	}
 }
