@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import java.sql.Connection;
 
-import com.mysql.fabric.xmlrpc.base.Data;
 import com.vehiculos.mvc.models.Conexion;
 import com.vehiculos.mvc.models.vo.Propietario;
 
@@ -43,7 +42,7 @@ public class DAOPropietario extends Conexion implements DAO<Propietario>{
 			
 			
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 		}finally {
 			desconectar(con);
 		}
@@ -57,7 +56,7 @@ public class DAOPropietario extends Conexion implements DAO<Propietario>{
 		Propietario item = null;
 
 		Connection con = conectar();
-		String sql = "select * from propietarios where id_propietaro = ?;";
+		String sql = "select * from propietarios where id_propietario = ?;";
 
 		try {
 
@@ -77,7 +76,7 @@ public class DAOPropietario extends Conexion implements DAO<Propietario>{
 
 
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}finally {
 			desconectar(con);
 		}
@@ -120,7 +119,7 @@ public class DAOPropietario extends Conexion implements DAO<Propietario>{
 		
 		
 		Connection con = conectar();
-		String sql = "delete from propietarios where id_propietario = ?";
+		String sql = "update propietarios set nombre = ?, telefono = ?, edad = ?, where id_propietario = ?";
 
 		try {
 
@@ -148,7 +147,7 @@ public class DAOPropietario extends Conexion implements DAO<Propietario>{
 	public boolean destroy(int id) {
 		
 		Connection con = conectar();
-		String sql = "update propietarios set nombre = ?, telefono = ?, edad = ?, where id_propietario = ?";
+		String sql = "delete from propietarios where id_propietario = ?;";
 
 		try {
 

@@ -6,6 +6,7 @@ public class Vehiculo {
 	private int idPropietario;
 	private String placa;
 	private Propietario propietario;
+	private String nombrePropietario;
 	
 	
 	public Vehiculo( int idPropietario, String placa) {
@@ -15,12 +16,24 @@ public class Vehiculo {
 		this.propietario = null;
 	}
 
+	//Constructor para Find()
 	public Vehiculo(int id, int idPropietario, String placa, Propietario propietario) {
 		
 		this.id = id;
 		this.idPropietario = idPropietario;
 		this.placa = placa;
 		this.propietario = propietario;
+		if (propietario != null) {
+			this.nombrePropietario = propietario.getNombre();
+		}
+	}
+	
+	//Constructor para All()
+	public Vehiculo(int id, int idPropietario, String placa, String nombrePropietario) {
+		this.id = id;
+		this.idPropietario = idPropietario;
+		this.placa = placa;
+		this.nombrePropietario = nombrePropietario;
 	}
 
 	public int getId() {
@@ -54,6 +67,14 @@ public class Vehiculo {
 	public void setPropietario(Propietario propietario) {
 		this.propietario = propietario;
 	}
+	
+	public String getNombrePropietario() {
+		return nombrePropietario;
+	}
+
+	public void setNombrePropietario(String nombrePropietario) {
+		this.nombrePropietario = nombrePropietario;
+	}
 
 	@Override
 	public String toString() {
@@ -61,10 +82,5 @@ public class Vehiculo {
 				+ propietario + "]";
 	}
 
- 
-	
-	
-	
-	
 }
 
