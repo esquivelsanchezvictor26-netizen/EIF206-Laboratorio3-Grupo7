@@ -10,12 +10,12 @@ import java.awt.Dimension;
 
 public class TarjetaVehiculo extends JPanel {
 
-	private static final long serialVersionUID = 1L;
-	private JLabel lblVehiculo;
-	private JLabel lblPropietario;
-	private JLabel lblPlaca;
-	private JButton btnEliminar;
-	private JButton btnEditar;
+	public static final long serialVersionUID = 1L;
+	public JLabel lblVehiculo;
+	public JLabel lblPropietario;
+	public JLabel lblPlaca;
+	public JButton btnEliminar;
+	public JButton btnEditar;
 
 	/**
 	 * Create the panel.
