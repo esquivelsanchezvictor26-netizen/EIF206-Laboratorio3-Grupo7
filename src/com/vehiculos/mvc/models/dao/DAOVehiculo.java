@@ -50,7 +50,7 @@ public class DAOVehiculo extends Conexion implements DAO<Vehiculo>{
 
 
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}finally {
 			desconectar(con);
 		}
@@ -66,7 +66,7 @@ public class DAOVehiculo extends Conexion implements DAO<Vehiculo>{
 		Vehiculo item = null;
 
 		Connection con = conectar();
-		String sql = "select * from vehiculos v inner join propietarios p on v.id_propietario = p.id_propietario where v.id_vehiculo;";
+		String sql = "select * from vehiculos v inner join propietarios p on v.id_propietario = p.id_propietario where v.id_vehiculo = ?;";
 
 		try {
 
@@ -108,7 +108,7 @@ public class DAOVehiculo extends Conexion implements DAO<Vehiculo>{
 	public boolean store(Vehiculo item) {
 		
 		Connection con = conectar();
-		String sql = "insert into vehiculos (idPropietario, placa) values(?, ?);";
+		String sql = "insert into vehiculos (id_propietario, placa) values(?, ?);";
 
 		try {
 
@@ -134,14 +134,14 @@ public class DAOVehiculo extends Conexion implements DAO<Vehiculo>{
 	@Override
 	public boolean update(Vehiculo item, int id) {
 		Connection con = conectar();
-		String sql = "update vehiculos set placa = ?, where id_propietario = ? where id_vehiculo";
+		String sql = "update vehiculos set placa = ?, id_propietario = ? where id_vehiculo = ?;";
 
 		try {
 
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, item.getPlaca());
 			ps.setInt(2, item.getIdPropietario());
-			ps.setInt(3, item.getId());
+			ps.setInt(3, id);
 			
 			ps.execute();
 
