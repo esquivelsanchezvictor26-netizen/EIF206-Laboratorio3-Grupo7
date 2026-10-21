@@ -17,7 +17,7 @@ public class ControllerVehiculos extends Functions implements Controller<Vehicul
 	private DAOVehiculo dao;
 	private DAOPropietario daoPropietario;
 	private Index v;
-	private int idSeleccionado = 0; // 0 = nuevo, mayor a 0 = editando
+	private int idSeleccionado = 0; 
 
 	public ControllerVehiculos(ControllerPrincipal cp) {
 		this.cp = cp;
@@ -31,17 +31,14 @@ public class ControllerVehiculos extends Functions implements Controller<Vehicul
 		v = new Index();
 		idSeleccionado = 0;
 
-		// Llenar el JComboBox con los propietarios
 		for (Propietario p : daoPropietario.all()) {
 			v.panelForm.comboBox.addItem(p);
 		}
 
 		v.panelForm.btnGuardar.addActionListener(e -> save());
 
-		// PASO 1. BORRAR LO VIEJO
 		v.panelLista.panelVehiculos.removeAll();
 
-		// PASO 2. AGREGAR ELEMENTOS NUEVOS
 		ArrayList<Vehiculo> list = dao.all();
 
 		for (Vehiculo item : list) {
@@ -56,14 +53,12 @@ public class ControllerVehiculos extends Functions implements Controller<Vehicul
 			v.panelLista.panelVehiculos.add(tarjeta);
 		}
 
-		// PASO 3. REFRESCAR LA VISTA
 		v.panelLista.panelVehiculos.repaint();
 		v.panelLista.panelVehiculos.revalidate();
 
 		cp.vp.setContenido(v, "Lista de vehículos");
 	}
-
-	// Botón GUARDAR: inserta o actualiza según idSeleccionado
+	
 	private void save() {
 
 		String placa = v.panelForm.textFieldPlaca.getText().trim();
@@ -83,7 +78,6 @@ public class ControllerVehiculos extends Functions implements Controller<Vehicul
 		}
 	}
 
-	// Botón + NUEVO: limpia el formulario y sale del modo edición
 	@Override
 	public void create() {
 		idSeleccionado = 0;
@@ -93,7 +87,6 @@ public class ControllerVehiculos extends Functions implements Controller<Vehicul
 		}
 	}
 
-	// Botón EDITAR de la tarjeta: carga los datos en el formulario
 	@Override
 	public void edit(int id) {
 
@@ -103,7 +96,6 @@ public class ControllerVehiculos extends Functions implements Controller<Vehicul
 		idSeleccionado = item.getId();
 		v.panelForm.textFieldPlaca.setText(item.getPlaca());
 
-		// Seleccionar en el combo el propietario del vehículo
 		for (int i = 0; i < v.panelForm.comboBox.getItemCount(); i++) {
 			Propietario p = v.panelForm.comboBox.getItemAt(i);
 			if (p.getId() == item.getIdPropietario()) {

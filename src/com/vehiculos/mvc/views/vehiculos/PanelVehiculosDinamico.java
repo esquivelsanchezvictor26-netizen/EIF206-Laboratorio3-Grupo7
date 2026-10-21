@@ -16,7 +16,6 @@ public class PanelVehiculosDinamico extends JPanel {
 		panelVehiculos = new JPanel();
 		panelVehiculos.setLayout(new GridLayout(0, 3, 10, 10));
 
-		// Wrapper para que las tarjetas no se estiren cuando hay pocas
 		JPanel wrapper = new JPanel(new BorderLayout());
 		wrapper.add(panelVehiculos, BorderLayout.NORTH);
 
